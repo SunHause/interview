@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        float: left;
+      }
+      .clearfix::after {
+        display: block;
+        visibility: hidden;
+        clear: both;
+        height: 0;
+        font-size: 0;
+        content: "";
+      }
+      .center-layout {
+        float: left;
+        width: 400px;
+        height: 400px;
+        background-color: #f66;
+      }
+      .center-layout > div {
+        width: 100px;
+        height: 100px;
+        background-color: #66f;
+      }
+      .inline-block {
+        text-align: center;
+        line-height: 400px;
+        font-size: 0;
+        /* font-size: 0; */
+      }
+      .inline-block > div {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .table {
+        display: table;
+        display: table-cell;
+      }
+      .table div {
+        vertical-align: middle;
+      }
+      .table-cell {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .table-cell > div {
+        margin: 0 auto;
+      }
+      .transform {
+        position: relative;
+      }
+      .transform > div {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .position {
+        position: relative;
+      }
+      /* 定宽高 */
+      .position > div {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -50px 0 0 -50px;
+      }
+      /* 不定宽高 */
+      .position > div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+      }
+      .flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .flex2 {
+        display: flex;
+      }
+      .flex2 > div {
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>居中方式</h1>
+    <h2>水平居中</h2>
+    1.适用于所有元素的水平居中（感觉不太行）
+    <div style="width: fit-content; margin: 0 auto">我居中拉</div>
+    <div><span style="width: fit-content; margin: 0 auto">我居中拉</span></div>
+    2.块级元素
+    <div style="width: 100px; margin: 0 auto">我居中拉</div>
+    3.行内元素
+    <div style="text-align: center">
+      <span>行内元素居中父级用text-align: center</span>
+    </div>
+    4.position + left/right + margin-left/right + width
+    <div style="width: 100px; position: relative; left: 50%">我居中拉</div>
+    5.position + left/right + transform: translateX(-50%) 6.display:flex +
+    justify-content: center
+    <h2>垂直居中</h2>
+    <div class="container clearfix">
+      <div class="center-layout inline-block">
+        <div></div>
+      </div>
+      <div class="center-layout table">
+        <div></div>
+      </div>
+      <div class="center-layout table-cell">
+        <div></div>
+      </div>
+      <div class="center-layout transform">
+        <div></div>
+      </div>
+      <div class="center-layout position">
+        <div></div>
+      </div>
+      <div class="center-layout flex">
+        <div></div>
+      </div> 
+      <div class="center-layout flex2">
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>
